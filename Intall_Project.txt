@@ -1,0 +1,5 @@
+Clone the project to your local machine
+Open the project in VS Code
+In your project folder, run:
+python -m venv venv
+venv\Scripts\activate
