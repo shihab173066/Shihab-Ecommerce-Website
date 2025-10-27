@@ -1,18 +1,25 @@
+{% extends 'store/main.html' %}
 {% load static %}
+{% block content %}
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
 
+				<div style="display: flex; gap:1em; justify-content: space-between;">
+					<div>
+						<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+						<a class="btn btn-outline-success" href="#">View</a>		
+					</div>
+				
+					<h4><strong>${{product.price}}</strong></h4>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store</title>
-</head>
-<body>
-    <h1>Welcome to the Store</h1>  
-</body>
-
-<link rel ="stylesheet" type="text/css" href="{% static 'CSS/main.css' %}">
-<img src="{% static 'images/cart.png' %}" alt="Store Image">
-
-</html>
+{% endblock content %}
