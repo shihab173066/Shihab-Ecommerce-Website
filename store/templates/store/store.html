@@ -1,25 +1,53 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<div class="row">
-		{% for product in products %}
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{{product.imageURL}}">
-			<div class="box-element product">
-				<h6><strong>{{product.name}}</strong></h6>
-				<hr>
+<div class="row">
+    <!-- Product 1 -->
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{% static 'images/shirt.jpg' %}">
+        <div class="box-element product">
+            <h6><strong>Casual Shirt</strong></h6>
+            <hr>
+            <div style="display: flex; gap:1em; justify-content: space-between;">
+                <div>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="#">View</a>       
+                </div>
+                <h4><strong>$25.00</strong></h4>
+            </div>
+        </div>
+    </div>
 
-				<div style="display: flex; gap:1em; justify-content: space-between;">
-					<div>
-						<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-						<a class="btn btn-outline-success" href="#">View</a>		
-					</div>
-				
-					<h4><strong>${{product.price}}</strong></h4>
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+    <!-- Product 2 -->
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{% static 'images/shoes.jpg' %}">
+        <div class="box-element product">
+            <h6><strong>Running Shoes</strong></h6>
+            <hr>
+            <div style="display: flex; gap:1em; justify-content: space-between;">
+                <div>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="#">View</a>       
+                </div>
+                <h4><strong>$50.00</strong></h4>
+            </div>
+        </div>
+    </div>
 
+    <!-- Product 3 -->
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{% static 'images/watch.jpg' %}">
+        <div class="box-element product">
+            <h6><strong>Wrist Watch</strong></h6>
+            <hr>
+            <div style="display: flex; gap:1em; justify-content: space-between;">
+                <div>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="#">View</a>       
+                </div>
+                <h4><strong>$120.00</strong></h4>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
