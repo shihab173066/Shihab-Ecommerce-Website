@@ -76,3 +76,9 @@ Receive confirmation and order summary.
 Username: shihab
 Email Address: shihab.ecom@mysite.com
 Pass: ecom
+
+
+## Test Customer
+
+Username: shihab
+Email Address: shihab.ecom@mysite.com
