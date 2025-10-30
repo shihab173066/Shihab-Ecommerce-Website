@@ -71,3 +71,8 @@ Pay securely via PayPal.
 
 Receive confirmation and order summary.
 
+
+## ⚙️ Super admin
+Username: shihab
+Email Address: shihab.ecom@mysite.com
+Pass: ecom
