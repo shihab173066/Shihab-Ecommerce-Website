@@ -27,7 +27,7 @@ def cart(request):
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/cart.html', context)
 
-def checkout(request):
+def checkout(request): #added checkout function
 	data = cartData(request)
 	
 	cartItems = data['cartItems']
