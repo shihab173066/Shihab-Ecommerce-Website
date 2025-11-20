@@ -10,7 +10,7 @@ local_settings.py
 
 # Django static and compiled files
 staticfiles/
-static/
+# static/
 build/
 dist/
 
