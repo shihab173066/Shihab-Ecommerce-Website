@@ -82,3 +82,8 @@ Pass: ecom
 
 Username: shihab
 Email Address: shihab.ecom@mysite.com
+
+## Paypal Personal Account 
+Username: Shihab Ecom
+Email Address: shihab.ecom@personal.com
+Pass: *****
