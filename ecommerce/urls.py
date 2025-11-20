@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('store.urls')),  # include store app URLs
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG == False:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
