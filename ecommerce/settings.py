@@ -19,12 +19,14 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'shihab-ecommerce-website.onrender.com',
+    'shihab-ecommerce-website-1.onrender.com',
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'https://shihab-ecommerce-website.onrender.com',
+    'https://shihab-ecommerce-website-1.onrender.com',
 ]
 
 
