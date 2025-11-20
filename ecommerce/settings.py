@@ -1,18 +1,17 @@
 """
 Django settings for ecommerce project.
-... (standard Django header)
 """
 
 from pathlib import Path
 import os
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# -------------------------------------------------------------
+# SECURITY
+# -------------------------------------------------------------
 SECRET_KEY = 'django-insecure-g*c52-sw60urfkt#)8szop)2tr!imfxsnh%4#4)+@!^zivcjzb'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = [
@@ -22,16 +21,15 @@ ALLOWED_HOSTS = [
     'shihab-ecommerce-website-1.onrender.com',
 ]
 
-
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'https://shihab-ecommerce-website.onrender.com',
     'https://shihab-ecommerce-website-1.onrender.com',
 ]
 
-
-# Application definition
-
+# -------------------------------------------------------------
+# APPS
+# -------------------------------------------------------------
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,12 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'store.apps.StoreConfig', # added app
+    'store.apps.StoreConfig',
 ]
 
+# -------------------------------------------------------------
+# MIDDLEWARE
+# -------------------------------------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Correctly placed
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # IMPORTANT
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +56,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ecommerce.urls'
 
+# -------------------------------------------------------------
+# TEMPLATES
+# -------------------------------------------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -72,8 +76,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
-
-# Database
+# -------------------------------------------------------------
+# DATABASE
+# -------------------------------------------------------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,46 +86,47 @@ DATABASES = {
     }
 }
 
-
-# Password validation
+# -------------------------------------------------------------
+# PASSWORD VALIDATION
+# -------------------------------------------------------------
 AUTH_PASSWORD_VALIDATORS = [
-    # ... (omitted for brevity)
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
-# Internationalization
+# -------------------------------------------------------------
+# INTERNATIONALIZATION
+# -------------------------------------------------------------
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# -------------------------------------------------------------
+# STATIC & MEDIA CONFIG (Option A)
+# -------------------------------------------------------------
 
-# ----------------------------------------------------------------------
-# ✅ FIXED STATIC & MEDIA FILE CONFIGURATION
-# ----------------------------------------------------------------------
-
-# 1. Static URL & Root (For WhiteNoise)
+# Static URL
 STATIC_URL = '/static/'
+
+# Where collected static files go (Render serves this folder)
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-# 2. Locations to look for static files (where your 'static' folder is)
-# This includes the root static folder used for global assets like CSS/JS.
+# Project-level static folder (you chose Option A)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-# 3. WhiteNoise Storage (REQUIRED for production styling)
-# This handles compression and caching for WhiteNoise.
+# WhiteNoise storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# 4. Media URL & Root (For uploaded files like product images)
-# The MEDIA_ROOT is where your uploaded files are stored locally (and should be
-# committed to Git for this non-S3 setup).
+# Media files (uploaded images)
 MEDIA_URL = '/media/'
-# Based on your previous working directory structure, this is the correct path:
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images') 
-# ----------------------------------------------------------------------
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-# Default primary key field type
+# -------------------------------------------------------------
+# DEFAULT PRIMARY KEY
+# -------------------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
