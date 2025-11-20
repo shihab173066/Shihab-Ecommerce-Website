@@ -4,13 +4,14 @@
 *.pyc
 __pycache__/
 db.sqlite3
+media/
 
 # If using local settings
 local_settings.py
 
 # Django static and compiled files
 staticfiles/
-# static/
+static/
 build/
 dist/
 
