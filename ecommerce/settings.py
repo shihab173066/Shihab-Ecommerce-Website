@@ -26,10 +26,11 @@ SECRET_KEY = 'django-insecure-g*c52-sw60urfkt#)8szop)2tr!imfxsnh%4#4)+@!^zivcjzb
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://shihab-ecommerce-website.onrender.com'
-    '127.0.0.1', 
-    'localhost'
+    'localhost',
+    '127.0.0.1',
+    'shihab-ecommerce-website.onrender.com',
 ]
+
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
