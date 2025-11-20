@@ -1,0 +1,53 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+
+# If using local settings
+local_settings.py
+
+# Django static and compiled files
+staticfiles/
+static/
+build/
+dist/
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.python-version
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+*.py[cod]
+*$py.class
+
+# Testing
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment variables
+.env
+*.env
+
+# Migrations (optional; remove this if you want to track migrations)
+# */migrations/
+# But you SHOULD track migrations for real projects
