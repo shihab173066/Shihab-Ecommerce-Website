@@ -25,7 +25,16 @@ SECRET_KEY = 'django-insecure-g*c52-sw60urfkt#)8szop)2tr!imfxsnh%4#4)+@!^zivcjzb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://shihab-ecommerce-website.onrender.com'
+    '127.0.0.1', 
+    'localhost'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'https://todoapp-wego.onrender.com',
+]
 
 
 # Application definition
