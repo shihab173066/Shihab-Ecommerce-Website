@@ -11,13 +11,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -------------------------------------------------------------
 # SECURITY
 # -------------------------------------------------------------
-# SECRET_KEY = 'django-insecure-g*c52-sw60urfkt#)8szop)2tr!imfxsnh%4#4)+@!^zivcjzb'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-default-key')
+SECRET_KEY = 'django-insecure-g*c52-sw60urfkt#)8szop)2tr!imfxsnh%4#4)+@!^zivcjzb'
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-default-key')
 
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*',
     'localhost',
     '127.0.0.1',
     'shihab-ecommerce-website.onrender.com',
@@ -82,16 +81,14 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # -------------------------------------------------------------
 # DATABASE
 # -------------------------------------------------------------
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
 
 # -------------------------------------------------------------
 # PASSWORD VALIDATION
