@@ -12,5 +12,5 @@ urlpatterns = [
     path('', include('store.urls')),  # include store app URLs
 ]
 
-if settings.DEBUG == False:
+if settings.DEBUG == True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
